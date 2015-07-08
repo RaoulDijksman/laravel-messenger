@@ -47,7 +47,7 @@ class Thread extends Eloquent
      */
     public function getLatestMessageAttribute()
     {
-        return $this->messages()->latest()->first();
+        return $this->messages->sortBy('created_at')->last();
     }
 
     /**
